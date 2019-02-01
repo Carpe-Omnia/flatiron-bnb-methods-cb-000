@@ -7,7 +7,7 @@ class Reservation < ActiveRecord::Base
   validates :checkout, presence: true
 
   validate :check_in
-
+  validate :check_out
 
   private
 
@@ -18,6 +18,10 @@ class Reservation < ActiveRecord::Base
     if checkout == checkin
       errors.add(:checkin, "checkin and checkout can't be the same day")
     end
-
   end
+
+
+
+
+
 end
