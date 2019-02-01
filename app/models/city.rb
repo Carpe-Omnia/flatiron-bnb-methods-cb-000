@@ -18,6 +18,7 @@ class City < ActiveRecord::Base
         c_in = intize(res.checkin.to_s)
         c_out = intize(res.checkout.to_s)
         c_in > start && c_in < stop || c_out > start && c_out < stop || c_in < start && c_out > stop
+        puts res.id
         puts c_in > start && c_in < stop || c_out > start && c_out < stop || c_in < start && c_out > stop
       end
       if occupied == false
