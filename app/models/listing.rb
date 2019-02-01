@@ -17,6 +17,7 @@ class Listing < ActiveRecord::Base
 
   def make_host
     self.host.host = true
+    self.host.save
   end
 
   def take_host
