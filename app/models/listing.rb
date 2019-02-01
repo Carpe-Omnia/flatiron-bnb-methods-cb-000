@@ -33,7 +33,7 @@ class Listing < ActiveRecord::Base
     self.reviews.each do |review|
       total += review.rating.to_i
     end
-    num_review != 0 ? avg = total / num_review : avg = 0
+    num_review != 0 ? avg = total / num_review : avg = 0.00
     avg
   end
 
