@@ -1,4 +1,4 @@
-def initize (date)
+def intize (date)
   ray = date.to_s.split("-")
   ring = ray.join
   num = ring.to_i
