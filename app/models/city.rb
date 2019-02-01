@@ -32,7 +32,7 @@ class City < ActiveRecord::Base
 
   def self.highest_ratio_res_to_listings
     emray = ["",0]
-    self.each do |city|
+    self.all.each do |city|
       list = city.listings.size
       res = city.reservations.size
       ratio = res / list
