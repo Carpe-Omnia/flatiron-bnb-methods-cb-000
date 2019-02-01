@@ -51,7 +51,7 @@ class City < ActiveRecord::Base
         emray = [city, res]
       end
     end
-    emray
+    emray[0]
   end
 
 
