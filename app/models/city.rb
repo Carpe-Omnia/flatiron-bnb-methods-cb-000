@@ -6,12 +6,12 @@ class City < ActiveRecord::Base
   def city_openings(start, stop)
     startray = start.split("-")
     stopray = stop.split("-")
-    startray.each do |thing| 
-      thing = thing.to_i 
-    end 
+    startray.each do |thing|
+      thing = thing.to_i
+    end
     stopray.each do |thing|
-      thing = thing.to_i 
-    end 
-        
+      thing = thing.to_i
+    end
+
 
 end
