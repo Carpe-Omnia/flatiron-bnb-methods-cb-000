@@ -8,4 +8,5 @@ class Neighborhood < ActiveRecord::Base
     stop = intize(stopdate)
     emray = []
   end
+
 end
