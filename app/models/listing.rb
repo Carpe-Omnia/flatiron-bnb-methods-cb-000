@@ -30,4 +30,5 @@ class Listing < ActiveRecord::Base
   def average_review_rating
     num_review = self.reviews.size
 
+  end
 end
