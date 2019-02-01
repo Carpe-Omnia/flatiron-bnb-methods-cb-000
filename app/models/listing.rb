@@ -22,4 +22,5 @@ class Listing < ActiveRecord::Base
   def take_host
     User.find_by(id: self.host_id).host = false
   end
+  
 end
