@@ -11,4 +11,15 @@ class Listing < ActiveRecord::Base
   validates :description, presence: true
   validates :price, presence: true
   validates :neighborhood_id, presence: true
+
+  before_create :make_host
+  before_destroy :take_host
+
+  def make_host
+    User.find_by(id: self.host_id).host = true
+  end
+
+  def take_host
+    User.find_by(id: self.host_id).host = false
+  end
 end
