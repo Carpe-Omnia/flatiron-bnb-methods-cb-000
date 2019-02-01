@@ -4,4 +4,8 @@ class Neighborhood < ActiveRecord::Base
   has_many :reservations, :through => :listings
 
   def neighborhood_openings(startdate, stopdate)
+    start = intize(startdate)
+    stop = intize(stopdate)
+    emray = []
+  end
 end
