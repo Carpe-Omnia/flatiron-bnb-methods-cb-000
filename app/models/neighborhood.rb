@@ -25,7 +25,7 @@ class Neighborhood < ActiveRecord::Base
     self.all.each do |hood|
       list = hood.listings.size
       res = hood.reservations.size
-      ratio = res / list
+      list != 0 ? ratio = res / list : ratio = 0
       if ratio > emray[1]
         emray = [hood, ratio]
       end
