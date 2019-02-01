@@ -19,7 +19,7 @@ class City < ActiveRecord::Base
         c_out = intize(res.checkout.to_s)
         puts res.checkin
         puts c_in > start && c_in < stop || c_out > start && c_out < stop || c_in < start && c_out > stop
-        return c_in > start && c_in < stop || c_out > start && c_out < stop || c_in < start && c_out > stop
+        c_in > start && c_in < stop || c_out > start && c_out < stop || c_in < start && c_out > stop
       end
       puts "#{listing.title} has occupied = #{occupied}"
       if occupied == false
