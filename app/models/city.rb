@@ -43,13 +43,13 @@ class City < ActiveRecord::Base
     emray[0]
   end
 
-  def self.most_res 
+  def self.most_res
     emray = ["",0]
     self.all.each do |city|
       res = city.reservations.size
       if res > emray[1]
         emray = [city, res]
-      end 
-    end 
-    emray     
+      end
+    end
+    emray
 end
