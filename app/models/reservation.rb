@@ -20,7 +20,9 @@ class Reservation < ActiveRecord::Base
     end
   end
 
-
+  def check_out 
+    if !self.listing.neighborhood.neighborhood_openings(checkin, checkin).include?(self)
+      errors.add(:checkin, "not available at check out")
 
 
 
