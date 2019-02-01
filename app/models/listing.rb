@@ -27,4 +27,5 @@ class Listing < ActiveRecord::Base
     end
   end
 
+  def average_review_rating
 end
