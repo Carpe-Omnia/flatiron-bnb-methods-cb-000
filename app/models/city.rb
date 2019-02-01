@@ -1,3 +1,8 @@
+def initize (date)
+  ray = date.to_s.split("-")
+  ring = ray.join
+  num = ring.to_i 
+end   
 class City < ActiveRecord::Base
   has_many :neighborhoods
   has_many :listings, :through => :neighborhoods
