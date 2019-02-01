@@ -17,8 +17,8 @@ class City < ActiveRecord::Base
       occupied = listing.reservations.any? do |res|
         c_in = intize(res.checkin.to_s)
         c_out = intize(res.checkout.to_s)
-        puts res.checkin
-        puts c_in > start && c_in < stop || c_out > start && c_out < stop || c_in < start && c_out > stop
+        #puts res.checkin
+        #puts c_in > start && c_in < stop || c_out > start && c_out < stop || c_in < start && c_out > stop
         c_in > start && c_in < stop || c_out > start && c_out < stop || c_in < start && c_out > stop
       end
       puts "#{listing.title} has occupied = #{occupied}"
