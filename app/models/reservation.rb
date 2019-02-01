@@ -19,6 +19,9 @@ class Reservation < ActiveRecord::Base
     if checkout == checkin
       errors.add(:checkin, "checkin and checkout can't be the same day")
     end
+    if intize(checkout) < intize(checkin)
+      errors.add(:checkin, "Checkout must be after checkin")
+    end
   end
 
   def check_out
