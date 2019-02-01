@@ -21,7 +21,10 @@ class Listing < ActiveRecord::Base
   end
 
   def take_host
-    self.host.host = false
+    if self.host.listings.size == 1
+      self.host.host = false
+      self.host.host.save
+    end
   end
 
 end
