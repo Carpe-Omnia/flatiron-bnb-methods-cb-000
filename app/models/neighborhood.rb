@@ -20,4 +20,29 @@ class Neighborhood < ActiveRecord::Base
     emray
   end
 
+  def self.highest_ratio_res_to_listings
+    emray = ["",0]
+    self.all.each do |hood|
+      list = hood.listings.size
+      res = hood.reservations.size
+      ratio = res / list
+      if ratio > emray[1]
+        emray = [hood, ratio]
+      end
+    end
+    emray[0]
+  end
+
+  def self.most_res
+    emray = ["",0]
+    self.all.each do |hood|
+      res = hood.reservations.size
+      if res > emray[1]
+        emray = [hood, res]
+      end
+    end
+    emray[0]
+  end
+
+
 end
