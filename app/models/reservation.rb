@@ -11,6 +11,12 @@ class Reservation < ActiveRecord::Base
   validate :available?
 
   private
+  def checkin
+    Date.parse(checkin)
+  end
+  def checkout
+    Date.parse(checkout)
+  end
 
   def check_in
     if !self.listing.neighborhood.neighborhood_openings(checkin, checkin).include?(self)
