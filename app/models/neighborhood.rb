@@ -3,4 +3,5 @@ class Neighborhood < ActiveRecord::Base
   has_many :listings
   has_many :reservations, :through => :listings
 
+  def neighborhood_openings(startdate, stopdate)
 end
