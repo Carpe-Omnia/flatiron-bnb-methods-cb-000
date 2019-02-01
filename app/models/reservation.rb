@@ -34,6 +34,9 @@ class Reservation < ActiveRecord::Base
     if !self.listing.neighborhood.neighborhood_openings(checkin, checkout).include?(self)
       errors.add(:checkin, "not available for those dates")
     end
+    if self.listing.host.id == self.guest.id
+      errors.add(:checkin, "Can't reserve somewhere you own")
+    end
   end
 
 
