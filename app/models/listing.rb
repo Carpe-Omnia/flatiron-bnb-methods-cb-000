@@ -16,11 +16,11 @@ class Listing < ActiveRecord::Base
   before_destroy :take_host
 
   def make_host
-    User.find_by(id: self.host_id).host = true
+    User.find_by(id: self.host_id).host? = true
   end
 
   def take_host
-    User.find_by(id: self.host_id).host = false
+    User.find_by(id: self.host_id).host? = false
   end
 
 end
