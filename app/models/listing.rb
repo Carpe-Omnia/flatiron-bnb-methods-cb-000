@@ -29,7 +29,7 @@ class Listing < ActiveRecord::Base
 
   def average_review_rating
     num_review = self.reviews.size
-    total = 0
+    total = 0.0000
     self.reviews.each do |review|
       total += review.rating.to_i
     end
