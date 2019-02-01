@@ -8,7 +8,8 @@ class Reservation < ActiveRecord::Base
 
   validate :check_in
   validate :check_out
-
+  validate :available?
+  
   private
 
   def check_in
@@ -23,9 +24,15 @@ class Reservation < ActiveRecord::Base
   def check_out
     if !self.listing.neighborhood.neighborhood_openings(checkin, checkin).include?(self)
       errors.add(:checkout, "not available at check out")
-    end
+    end 
+  end 
 
-
+  def available? 
+    if !self.listing.neighborhood.neighborhood_openings(checkin, checkout).include?(self)
+      errors.add(:checkin, "not available for those dates")
+    end 
+  end 
+      
 
 
 end
