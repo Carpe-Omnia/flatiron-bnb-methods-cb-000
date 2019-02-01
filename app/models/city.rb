@@ -34,12 +34,13 @@ class City < ActiveRecord::Base
     emray = ["",0]
     self.each do |city|
       list = city.listings.size
-      res = 0
-      city.listings.each do |listing|
-        res += listing.reservations.size
+      res = city.reservations.size
+      ratio = res / list
+      if ratio > emray[1]
+        emray = [city, ratio]
       end
     end
-    0
+    emray[0]
   end
 
 end
