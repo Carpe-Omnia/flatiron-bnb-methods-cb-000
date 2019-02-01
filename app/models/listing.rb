@@ -31,4 +31,7 @@ class Listing < ActiveRecord::Base
     num_review = self.reviews.size
 
   end
+
+
+  
 end
