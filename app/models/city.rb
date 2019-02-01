@@ -29,4 +29,6 @@ class City < ActiveRecord::Base
     emray
   end
 
+  def self.highest_ratio_res_to_listings
+  end
 end
